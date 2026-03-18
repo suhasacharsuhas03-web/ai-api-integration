@@ -68,7 +68,8 @@ Screenshots of outputs are included in the `screenshots` folder.
 - Hugging Face API endpoints were deprecated/unstable, so fallback responses were used.
 - Ollama could not run due to system memory limitations, so fallback response was implemented.
 - Cohere API required migration from Generate API to Chat API due to deprecation.
-
+- Hugging Face API was unstable due to recent endpoint changes and returned errors.
+- Error handling was implemented to manage API failures gracefully.
 ---
 
 ## ✅ Conclusion

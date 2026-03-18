@@ -1,13 +1,26 @@
 import os
+import requests
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
+
+API_URL = "https://router.huggingface.co/hf-inference/models/distilgpt2"
+headers = {
+    "Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_KEY')}"
+}
 
 def query_huggingface(prompt):
     try:
-        # Simulated response (fallback due to API issues)
-        return f"Hugging Face Response: Artificial Intelligence is the ability of machines to think and learn like humans. (Prompt: {prompt})"
+        response = requests.post(
+            API_URL,
+            headers=headers,
+            json={"inputs": prompt}
+        )
+
+        if response.status_code != 200:
+            return f"Error: {response.status_code} - API unavailable"
+
+        return response.text
 
     except Exception as e:
         return f"Error: {str(e)}"
@@ -16,6 +29,4 @@ def query_huggingface(prompt):
 if __name__ == "__main__":
     user_input = input("Enter your prompt: ")
     print("Querying Hugging Face...")
-    result = query_huggingface(user_input)
-    print("Response:")
-    print(result)
+    print(query_huggingface(user_input))
