@@ -35,6 +35,27 @@ This project demonstrates integration of multiple Generative AI APIs including O
 4. Run any script:
    python groq_example.py
 
+## 🔑 How to Get API Keys
+
+To run this project, you need API keys from the following providers:
+
+- **OpenAI**  
+  Get your API key from: https://platform.openai.com/api-keys
+
+- **Groq**  
+  Get your API key from: https://console.groq.com/
+
+- **Hugging Face**  
+  Get your token from: https://huggingface.co/settings/tokens
+
+- **Google Gemini**  
+  Get your API key from: https://makersuite.google.com/app/apikey
+
+- **Cohere**  
+  Get your API key from: https://dashboard.cohere.com/
+
+- **Ollama**  
+  Download and install from: https://ollama.ai/ (no API key required)
 ---
 
 ## 📸 Screenshots
